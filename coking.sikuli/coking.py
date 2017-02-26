@@ -1,0 +1,12 @@
+for i in range(19):
+    click(Pattern("1487080589707.png").targetOffset(116,-3))
+    rightClick(Pattern("1487080645671.png").similar(0.79))
+    click(Pattern("1487081149098.png").targetOffset(-2,-31))
+    click(Pattern("1487080726389.png").targetOffset(-38,7))
+    click("1487080751581.png")
+    click(Pattern("1487080783617.png").targetOffset(2,36))
+    mouseDown(Button.LEFT)
+    sleep(15)
+    mouseUp(Button.LEFT)
+    click(Pattern("1487081077369.png").targetOffset(-47,3))
+    sleep(10)

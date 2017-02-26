@@ -1,0 +1,100 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>sheep.sikuli</h2> <a href="sheep.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="kw">for</span> x <span class="kw">in</span> range(<span class="dig">100</span>):
+    <span class="skw">type</span>(Key.TAB)
+    <span class="skw">doubleClick</span>(Pattern(<img src="1487242876065.png" />).targetOffset(<span class="dig">117</span>,-<span class="dig">4</span>))
+    <span class="skw">doubleClick</span>(Pattern(<img src="1487242892433.png" />).targetOffset(<span class="dig">117</span>,-<span class="dig">3</span>))
+    <span class="skw">sleep</span>(<span class="dig">5</span>)
+    <span class="skw">type</span>(Key.ESC)
+    <span class="skw">sleep</span>(<span class="dig">0.2</span>)
+    <span class="skw">type</span>(Key.TAB)
+
+    <span class="kw">for</span> i <span class="kw">in</span> range(<span class="dig">12</span>):
+        hover(<img src="1487245714666.png" />)
+        keyDown(Key.ALT)
+        <span class="skw">click</span>(<img src="1487300323483.png" />)
+        keyUp(Key.ALT)
+        keyDown(Key.ALT)
+        <span class="kw">if</span> (i != <span class="dig">0</span>) <span class="kw">or</span> (x != <span class="dig">0</span>):
+            <span class="kw">for</span> z, z_content <span class="kw">in</span> enumerate(findAll(<img src="1487242785957.png" />)):
+                <span class="kw">if</span> z &lt; <span class="dig">3</span>:
+                    <span class="skw">click</span>(z_content)
+                    <span class="cmt"># to new location no screen</span>
+                    <span class="cmt">#click("1487242785957.png")</span>
+        <span class="skw">sleep</span>(<span class="dig">1</span>)
+        keyUp(Key.ALT)
+        <span class="skw">sleep</span>(<span class="dig">1</span>)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+</pre>
+</body>
+</html>

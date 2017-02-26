@@ -1,0 +1,102 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>skill5.sikuli</h2> <a href="skill5.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+skip = [<span class="dig">0</span>, <span class="dig">1</span>]
+
+<span class="kw">def</span> order(v):
+    <span class="kw">return</span> v.y, v.x
+
+<span class="kw">def</span> level_up():
+    <span class="kw">try</span>:
+        <span class="kw">if</span> <span class="skw">find</span>(<img src="1488093197899.png" />):
+            <span class="kw">for</span> i <span class="kw">in</span> findAll(<img src="1488093197899.png" />):
+                <span class="skw">doubleClick</span>(i)
+                <span class="skw">sleep</span>(<span class="dig">1</span>)
+                <span class="skw">click</span>(<img src="1488093218212.png" />)
+                <span class="skw">sleep</span>(<span class="dig">1</span>)
+                <span class="skw">click</span>(<img src="1488093231068.png" />)
+    <span class="kw">except</span>:
+        <span class="kw">pass</span>
+
+<span class="kw">for</span> x <span class="kw">in</span> range(<span class="dig">10000</span>):
+    level_up()
+    buttons = findAll(<img src="1488092147417.png" />)
+    sort_buttons = sorted(buttons, key=order)
+
+    <span class="kw">for</span> skill_index, skill_button <span class="kw">in</span> enumerate(sort_buttons):
+        <span class="kw">if</span> skill_index <span class="kw">not</span> <span class="kw">in</span> skip:
+            <span class="skw">click</span>(skill_button)
+            <span class="skw">sleep</span>(<span class="dig">3.5</span>)
+            <span class="skw">type</span>(Key.ESC)
+</pre>
+</body>
+</html>
