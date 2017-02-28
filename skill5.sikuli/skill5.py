@@ -1,4 +1,4 @@
-skip = [0, 1]
+skip = [0, 1, 7]
 
 def order(v):
     return v.y, v.x
@@ -23,5 +23,5 @@ for x in range(10000):
     for skill_index, skill_button in enumerate(sort_buttons):
         if skill_index not in skip:
             click(skill_button)
-            sleep(3.5)
+            sleep(4.5)
             type(Key.ESC)

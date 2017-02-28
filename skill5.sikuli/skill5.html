@@ -70,7 +70,7 @@
 <h2>skill5.sikuli</h2> <a href="skill5.zip">(Download this script)</a>
 </div>
 <pre class="sikuli-code">
-skip = [<span class="dig">0</span>, <span class="dig">1</span>]
+skip = [<span class="dig">0</span>, <span class="dig">1</span>, <span class="dig">7</span>]
 
 <span class="kw">def</span> order(v):
     <span class="kw">return</span> v.y, v.x
@@ -95,7 +95,7 @@ skip = [<span class="dig">0</span>, <span class="dig">1</span>]
     <span class="kw">for</span> skill_index, skill_button <span class="kw">in</span> enumerate(sort_buttons):
         <span class="kw">if</span> skill_index <span class="kw">not</span> <span class="kw">in</span> skip:
             <span class="skw">click</span>(skill_button)
-            <span class="skw">sleep</span>(<span class="dig">3.5</span>)
+            <span class="skw">sleep</span>(<span class="dig">4.5</span>)
             <span class="skw">type</span>(Key.ESC)
 </pre>
 </body>
