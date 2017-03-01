@@ -71,19 +71,34 @@
 </div>
 <pre class="sikuli-code">
 <span class="kw">def</span> click_min():
-    <span class="skw">click</span>(Pattern(<img src="1488167445870.png" />).similar(<span class="dig">0.50</span>).targetOffset(<span class="dig">8</span>,<span class="dig">65</span>))
+    hover(<img src="1488347106668.png" />)
+    keyDown(Key.CTRL)
+    <span class="skw">click</span>(<img src="1488347106668.png" />)
+    keyUp(Key.CTRL)
 
 <span class="kw">def</span> change_weapon():
     <span class="kw">pass</span>
 
 <span class="kw">def</span> start_skill():
-    <span class="skw">type</span>(Key.F11)
+    <span class="skw">doubleClick</span>(Pattern(<img src="1488348198034.png" />).targetOffset(<span class="dig">119</span>,-<span class="dig">4</span>))
     click_min()
     <span class="skw">sleep</span>(<span class="dig">0.3</span>)
 
+<span class="kw">def</span> level_up():
+    <span class="kw">try</span>:
+        <span class="kw">if</span> <span class="skw">find</span>(<img src="1488093197899.png" />):
+            <span class="kw">for</span> i <span class="kw">in</span> findAll(<img src="1488093197899.png" />):
+                <span class="skw">doubleClick</span>(i)
+                <span class="skw">sleep</span>(<span class="dig">1</span>)
+                <span class="skw">click</span>(<img src="1488093218212.png" />)
+                <span class="skw">sleep</span>(<span class="dig">1</span>)
+                <span class="skw">click</span>(<img src="1488093231068.png" />)
+    <span class="kw">except</span>:
+        <span class="kw">pass</span>
+
 <span class="kw">for</span> i <span class="kw">in</span> range(<span class="dig">1000</span>):
     <span class="kw">if</span> i % <span class="dig">6</span> == <span class="dig">0</span>:
-        change_weapon()
+        level_up()
     start_skill()
 </pre>
 </body>
